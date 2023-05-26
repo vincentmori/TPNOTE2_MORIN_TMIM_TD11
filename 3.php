@@ -1,31 +1,39 @@
 <?php
-// Définition du nom de la base de données
-$database = "tpnote2";
 
-// Connexion à la base de données MySQL
-$db_handle = mysqli_connect("127.0.0.1:3306", "root", "");
-$db_found = mysqli_select_db($db_handle, $database);
+// start the session
+session_start();
+?>
 
-// Récupérer les données du formulaire
+<!DOCTYPE html>
+<html>
 
-$ID = isset($_POST['ID']) ? $_POST["ID"] : "";
-$Prenom = isset($_POST['Prenom']) ? $_POST["Prenom"] : "";
-$Nom = isset($_POST['Nom']) ? $_POST["Nom"] : "";
-$DateEmbauche = isset($_POST['DateEmbauche']) ? $_POST["DateEmbauche"] : "";
-$ID_Travail = isset($_POST['ID_Travail']) ? $_POST["ID_Travail"] : "";
-$Salaire = isset($_POST['Salaire']) ? $_POST["Salaire"] : "";
-$ID_Patron = isset($_POST['ID_Patron']) ? $_POST["ID_Patron"] : "";
-$ID_Dept = isset($_POST['ID_Dept']) ? $_POST["ID_Dept"] : "";
-// Requête d'insertion des données
-$sql = "INSERT INTO employes (ID, Prenom, Nom, DateEmbauche, ID_Travail, Salaire, ID_Patron, ID_Dept)
-        VALUES ('$ID', '$prenom', '$nom', '$DateEmbauche', '$ID_travail', '$salaire', '$ID_patron', '$ID_dept')";
+<head>
+    <title>Traitement des employees</title>
+    <meta charset="utf-8">
+</head>
 
-if ($db_found) {}
+<body>
+    <h1>Que souhaitez vous faire</h1>
+    <form action="familleDupond2.php" method="post">
+        <table>
+            <tr>
+                <td>
+                    Votre sélection :
+                </td>
+                <td>
+                    <input type="radio" name="choix" value="1">Afficher tous les membres de la famille<br>
+                    <input type="radio" name="choix" value="2">Afficher les membres, classer par prénom<br>
+                    <input type="radio" name="choix" value="3">Afficher les membres, classer par prenom décroissant<br>
+                    <input type="radio" name="choix" value="4">Afficher les membres nés avant 1960<br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="button1" value="Soumettre" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
 
-// Vérifier la connexion
-else {
-    echo "Erreur : Impossible de se connecter à la base de données.";
-}
-mysqli_close($db_handle);
-
-
+</html>
