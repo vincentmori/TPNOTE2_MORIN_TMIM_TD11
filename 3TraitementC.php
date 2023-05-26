@@ -31,6 +31,7 @@ if ($db_found) {
     echo "<th>Salaire</th>";
     echo "<th>ID_Patron</th>";
     echo "<th>ID_Dept</th>";
+    echo "<th>Photo</th>";
     echo "</tr>";
 
     while ($data = mysqli_fetch_assoc($result)) {
