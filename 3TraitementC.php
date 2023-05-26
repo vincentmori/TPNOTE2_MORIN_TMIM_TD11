@@ -15,6 +15,7 @@ $ID_Travail = isset($_POST['ID_Travail']) ? $_POST["ID_Travail"] : "";
 $Salaire = isset($_POST['Salaire']) ? $_POST["Salaire"] : "";
 $ID_Patron = isset($_POST['ID_Patron']) ? $_POST["ID_Patron"] : "";
 $ID_Dept = isset($_POST['ID_Dept']) ? $_POST["ID_Dept"] : "";
+$Photo = isset($_POST['Photo']) ? $_POST["Photo"] : "";
 
 if ($db_found) {
     $sql = "SELECT * FROM employes ORDER BY Salaire ASC"; // Requête employés ordre croissant salaire
@@ -42,6 +43,9 @@ if ($db_found) {
         echo "<td>" . $data["Salaire"] . "</td>";
         echo "<td>" . $data["ID_Patron"] . "</td>";
         echo "<td>" . $data["ID_Dept"] . "</td></tr>";
+        echo "Photo: " . $data["Photo"] . "<br>";
+        $image = $data['Photo'];
+        echo "<img src='$image' height='80' width='100' />";
     }
     echo "</table>";
 } else {
