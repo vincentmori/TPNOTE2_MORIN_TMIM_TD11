@@ -13,18 +13,16 @@ session_start();
 </head>
 
 <body>
-    <h1>Que souhaitez vous faire</h1>
-    <form action="familleDupond2.php" method="post">
+    <h1>Votre selection :</h1>
+    <form action="3Traitement.php" method="post">
         <table>
             <tr>
                 <td>
-                    Votre sélection :
-                </td>
-                <td>
-                    <input type="radio" name="choix" value="1">Afficher tous les membres de la famille<br>
-                    <input type="radio" name="choix" value="2">Afficher les membres, classer par prénom<br>
-                    <input type="radio" name="choix" value="3">Afficher les membres, classer par prenom décroissant<br>
-                    <input type="radio" name="choix" value="4">Afficher les membres nés avant 1960<br>
+                    <input type="radio" name="choix" value="1">Supprimer l'employe 102<br>
+                    <input type="radio" name="choix" value="2">Afficher les employes par ordre croissant de salaire<br>
+                    <input type="radio" name="choix" value="3">Afficher le salaire maximum et minimum<br>
+                    <input type="radio" name="choix" value="4">Afficher le salaire moyen et le nombre d'employe<br>
+                    <input type="radio" name="choix" value="5">Afficher les employes dont le patron a un ID de 100<br>
                 </td>
             </tr>
             <tr>

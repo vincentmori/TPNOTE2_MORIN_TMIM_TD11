@@ -13,14 +13,14 @@ session_start()
 
 <body>
     <?php
-    $numclient = $_POST['numclient'];  
+    $numclient = $_POST['numclient'];  //Récupère les données du formulaire
     $nom = $_POST['nom'];
     $age = $_POST['age'];
     $siege = $_POST['siege'];
     $statut = $_POST['statut'];
 
     // Vérification des champs vides
-    if (empty($nom) || empty($numclient) || empty($age) || empty($siege) || empty($statut)) {
+    if (empty($nom) || empty($numclient) || empty($age) || empty($siege) || empty($statut)) {//Verifier qu'il n'y a pas de blanc dans le formulaire
         if (empty($nom)){
             echo "Veuiller mettre le nom du client <br>";
         }
@@ -39,9 +39,7 @@ session_start()
     } 
     
     else {
-        // Calcul du prix de base
-
-        $rabais = "1";
+        $rabais = "1";//Calcul du rabais selon les conditions
         if ($age > 0 && $age < 3 ){
             $rabais = "0.5";
         }
@@ -53,7 +51,7 @@ session_start()
         }
 
 
-        $SiegePrix = "1";
+        $SiegePrix = "1";//Calcul du prix du siège
         if ($siege == "Affaire"){            
             $SiegePrix = "2.2";
         }
@@ -61,21 +59,25 @@ session_start()
             $SiegePrix = "3";
         }  
 
-        $prixBase = "550"*$SiegePrix; 
+        $prixBase = "550"*$SiegePrix; //Calcul du prix avec le prix du siège (550 = prix de base)
         
-        $prixBase = $prixBase*$rabais;
+        $prixBase = $prixBase*$rabais;//Prix apres rabais
 
-        if ($statut == "Fidélité"){            
-            $prixBase = $prixBase*0.975;
+
+        $RabaisStatut = "1";
+        if ($statut == "Fidélité"){    //Calcul si autre rabais selon le statut        
+            $RabaisStatut = "0.975";
         }
 
         else if ($statut == "VIP"){            
-            $prixBase = $prixBase*0.92;
+            $RabaisStatut = "0.92";
         }
+
+        $prixBase = $prixBase*$RabaisStatut;//Calcul du prix final
 
     }
 
-    echo "Numéro de Client : ". $numclient."<br>";
+    echo "Numéro de Client : ". $numclient."<br>";//Affichage des informations du client et le prix du billet
     echo "Nom du Client : ". $nom."<br>";
     echo "Age du Client : ". $age."<br>";
     echo "Type de siège : ". $siege."<br>";

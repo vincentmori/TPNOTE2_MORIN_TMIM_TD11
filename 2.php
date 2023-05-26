@@ -7,12 +7,12 @@ session_start();
 <html>
 
 <head>
-    <title>Formulaire</title>
+    <title>Formulaire</title><!--Titre du formulaire-->
     <meta charset="utf-8" />
 </head>
 
 <body>
-    <h2>Achat Ticket d'avion</h2>
+    <h2>Achat Ticket d'avion</h2><!--Formulaire ainsi que les différents questions du formulaire-->
     <form action="2traitement.php" method="post">
         <table>
             <tr>
