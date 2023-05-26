@@ -44,9 +44,8 @@ if ($db_found) {
         echo "<td>" . $data["Salaire"] . "</td>";
         echo "<td>" . $data["ID_Patron"] . "</td>";
         echo "<td>" . $data["ID_Dept"] . "</td></tr>";
-        echo "Photo: " . $data["Photo"] . "<br>";
         $image = $data['Photo'];
-        echo "<img src='$image' height='80' width='100' />";
+        echo "<img src='$image' height='80' width='100'/>";
     }
     echo "</table>";
 } else {
