@@ -27,16 +27,16 @@ if ($db_found) {
 
     while ($data = mysqli_fetch_assoc($result)) {
         // Code a exécuter a chaque itération de boucle
-        echo "<tr><td>" . $data["ID"] . "</td>";
+        echo "<><td>" . $data["ID"] . "</td>";
         echo "<td>" . $data["Prenom"] . "</td>";
         echo "<td>" . $data["Nom"] . "</td>";
         echo "<td>" . $data["DateEmbauche"] . "</td>";
         echo "<td>" . $data["ID_Travail"] . "</td>";
         echo "<td>" . $data["Salaire"] . "</td>";
         echo "<td>" . $data["ID_Patron"] . "</td>";
-        echo "<td>" . $data["ID_Dept"] . "</td></tr>";
+        echo "<td>" . $data["ID_Dept"] . "</td>";
         $image = $data['Photo'];
-        echo "<img src='$image' height='80' width='100'/>";
+        echo "<img src='$image' height='80' width='100'/></tr>";
     }
     echo "</table>";
 } else {
