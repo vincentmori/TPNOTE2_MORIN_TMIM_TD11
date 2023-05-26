@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data> <!-- recupère les données de chaque pays membre du BRICS-->
+    <Pays>
+        <Nom>Afrique du Sud</Nom>
+        <capital>Pretoria</capital>
+        <Superficie>1 221 037</Superficie>
+        <population>59.39 m</population>
+        <PIB>350 779</PIB>
+        <PIB_par_hab>6 617</PIB_par_hab>
+    </Pays>
+    <Pays>
+        <Nom>Brésil</Nom>
+        <capital>Brasilia</capital>
+        <Superficie>8 514 877</Superficie>
+        <population>214.33 m</population>
+        <PIB>2 242 854</PIB>
+        <PIB_par_hab>11 384</PIB_par_hab>
+    </Pays>
+    <Pays>
+        <Nom>Chine</Nom>
+        <capital>Pékin</capital>
+        <Superficie>9 596 961</Superficie>
+        <population>1 425.67 m</population>
+        <PIB>9 181 377</PIB>
+        <PIB_par_hab>7 589</PIB_par_hab>
+    </Pays>
+    <Pays>
+        <Nom>Inde</Nom>
+        <capital>New Delhi</capital>
+        <Superficie>3 287 595</Superficie>
+        <population>1 425.78 m</population>
+        <PIB>1 870 651</PIB>
+        <PIB_par_hab>1 032</PIB_par_hab>
+    </Pays>
+    <Pays>
+        <Nom>Russie</Nom>
+        <capital>Moscou</capital>
+        <Superficie>17 125 246</Superficie>
+        <population>143.45 m</population>
+        <PIB>2 118 006</PIB>
+        <PIB_par_hab>14 936</PIB_par_hab>
+    </Pays>
+</data>

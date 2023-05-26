@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page principale</title>
+    <style>
+        /*mise en forme CSS */
+        body {
+            font-family: Arial, Arial;
+            background-color: white;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-top: auto;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            background-color: green;
+            color: white;
+            margin-right: 10px;
+        }
+
+        #content {
+            display: none;
+            margin-top: auto;
+            border: 1px solid white;
+            padding: 10px;
+            font-size: 14px;
+            background-color: white;
+        }
+    </style>
+    <script>
+        function loadXMLDoc(url, callback) {
+            var xhttp;
+            if (window.XMLHttpRequest) {
+                // Création objet XMLHttpRequest
+                xhttp = new XMLHttpRequest();
+            } else {
+                // Création objet ActiveXObject 
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    callback(this.responseText);
+                }
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+
+        function showHTML() {
+            // Fonction appelée quand clic sur le bouton du html
+            loadXMLDoc("1.html", function (response) {
+                // Récupere contenu du fichier HTML 
+                document.getElementById("content").innerHTML = response;
+                document.getElementById("content").style.display = "block";
+            });
+        }
+
+        function showXML() {
+            // Fonction appelée quand clic sur le bouton du xml
+            loadXMLDoc("1.xml", function (response) {
+                // Récupérer contenu du fichier XML
+                document.getElementById("content").innerHTML = response;
+                document.getElementById("content").style.display = "block";
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Le BRICS</h1>
+        <div class="button-container">
+            <!-- Boutons pour afficher les documents HTML et XML -->
+            <button class="button" onclick="showHTML()">Qu'est-ce que le BRICS ?</button>
+            <button class="button" onclick="showXML()">Afficher les pays qui forment le BRICS</button>
+        </div>
+        <!-- Div affiche contenu du doc-->
+        <div id="content"></div>
+    </div>
+</body>
+
+</html>
