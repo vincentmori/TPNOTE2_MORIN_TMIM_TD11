@@ -36,7 +36,8 @@ if ($db_found) {
             echo "<td>" . $data["ID_Patron"] . "</td>";
             echo "<td>" . $data["ID_Dept"] . "</td>";
             $image = $data['Photo'];
-            echo "<img src='$image' height='80' width='100' /></tr>";
+            echo "<td><img src='$image' height='80' width='100' /></td>
+            </tr>";
         }
     }
     echo "</table>";
